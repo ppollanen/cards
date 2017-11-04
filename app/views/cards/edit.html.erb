@@ -1,0 +1,49 @@
+<h1>Muokkaa korttia</h1>
+
+<%= form_with(model: @card) do |form| %>
+
+  <% if @card.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@card.errors.count, "error") %> prohibited this card from being saved:
+      </h2>
+      <ul>
+        <% @card.errors.full_message.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= form.label :sarja %><br>
+    <%= form.text_field :sarja %>
+  </p>
+
+  <p>
+    <%= form.label :korttinro %><br>
+    <%= form.text_field :korttinro %>
+  </p>
+
+  <p>
+    <%= form.label :joukkue %><br>
+    <%= form.text_field :joukkue %>
+  </p>
+
+  <p>
+    <%= form.label :nimi %><br>
+    <%= form.text_field :nimi %>
+  </p>
+
+  <p>
+    <%= form.label :omistettu %><br>
+    <%= form.check_box :omistettu %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
+
+<%= link_to 'Takaisin', cards_path %>

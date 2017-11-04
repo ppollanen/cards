@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sarja: MyString
+  korttinro: MyString
+  joukkue: MyString
+  nimi: MyString
+
+two:
+  sarja: MyString
+  korttinro: MyString
+  joukkue: MyString
+  nimi: MyString

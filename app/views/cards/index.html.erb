@@ -1,0 +1,24 @@
+<h1>Kortit</h1>
+
+<table>
+  <tr>
+    <th>Sarja</th>
+    <th>Kortti numero</th>
+    <th>Joukkue</th>
+    <th>Nimi</th>
+    <th>Omistettu</th>
+  </tr>
+
+  <% @cards.each do |card| %>
+    <tr>
+      <td><%= card.sarja %></td>
+      <td><%= card.korttinro %></td>
+      <td><%= card.joukkue %></td>
+      <td><%= card.nimi %></td>
+      <td><%= card.omistettu %></td>
+      <td><%= link_to 'Näytä', card_path(card) %></td>
+      <td><%= link_to 'Muokkaa', edit_card_path(card) %></td>
+      <td><%= link_to 'Poista', card_path(card), method: :delete, data: { confirm: 'Oletko varma?'} %></td>
+    </tr>
+  <% end %>
+<table>
